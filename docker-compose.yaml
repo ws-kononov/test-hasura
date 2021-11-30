@@ -20,6 +20,10 @@ services:
     restart: always
     ports:  
       - 3000:3000
+    volumes:
+      - './:/usr/src/app'
+      - '/usr/src/app/node_modules'
+      - '/usr/src/app/.next'
   graphql-engine:
     image: hasura/graphql-engine:latest.cli-migrations-v3
     ports:
